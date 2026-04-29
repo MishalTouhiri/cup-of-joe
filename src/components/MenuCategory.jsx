@@ -24,7 +24,7 @@ export default function MenuCategory({ title, items }) {
       <div 
         dir="rtl" 
         className="grid grid-cols-3 gap-x-1 md:gap-x-12 gap-y-6 md:gap-y-10 w-full 
-                   origin-top-right scale-[0.75] sm:scale-90 md:scale-100 transition-transform"
+                   origin-top-right scale-[1] sm:scale-90 md:scale-100 transition-transform"
       >
         {items.map((item, index) => (
           <div key={index} className="flex justify-start w-full min-w-0">
