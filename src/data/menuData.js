@@ -2,7 +2,6 @@ export const menuData = [
   {
     id: "classic",
     title: "CLASSIC COFFEES",
-    cols: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
     items: [
       { ar: "كورتادو", en: "Cortado", price: "21", img: "☕" },
       { ar: "أمريكانو", en: "Americano", price: "9", img: "☕" },
@@ -18,16 +17,14 @@ export const menuData = [
   {
     id: "tea_filter",
     title: "TEA & FILTER COFFEES",
-    cols: "grid-cols-1 lg:grid-cols-2",
     items: [
       { ar: "قهوة مقطرة", en: "Filter beans", img: "⚗️", subText: "السعر يختلف حسب نوع البن\nPrice varies based on origin\nV60\nChemex" },
       { ar: "شاي", en: "Tea", price: "12", img: "🫖", subText: "شاي أخضر | Green Tea\nشاي أسود | Black Tea\nليمون وزنجبيل | Lemon & Ginger\nشاي فواكه | Fruity Tea" },
     ]
   },
   {
-    id: "specialty",
+    id: "specialty_hot",
     title: "SPECIALTY COFFEE",
-    cols: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
     items: [
       { ar: "لاتيه كراميل مملح", en: "Salted Caramel Latte", priceHot: "24", priceCold: "28", img: "🧋" },
       { ar: "جو سبيشل (المميز)", en: "Joe Special (Signature)", price: "28", img: "🧋" },
@@ -37,7 +34,6 @@ export const menuData = [
   {
     id: "matcha",
     title: "MATCHA",
-    cols: "grid-cols-1 lg:grid-cols-2",
     items: [
       { ar: "ماتشا محلاة", en: "Sweetened Matcha", priceHot: "33", priceCold: "33", img: "🍵" },
       { ar: "ماتشا عضوية", en: "Organic Matcha", priceHot: "28", priceCold: "28", img: "🍵" },
@@ -46,7 +42,6 @@ export const menuData = [
   {
     id: "specialty_cold",
     title: "SPECIALTY COFFEE",
-    cols: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
     items: [
       { ar: "آيس تي", en: "Ice Tea", price: "25", img: "🍹", subText: "كركديه | Hibiscus\nباشن فروت | Passion Fruit\nخوخ | Peach" },
       { ar: "عصير برتقال", en: "Orange Juice", price: "20", img: "🍊" },
@@ -56,7 +51,6 @@ export const menuData = [
   {
     id: "sandwiches",
     title: "SANDWICHES",
-    cols: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
     items: [
       { ar: "تونا", en: "Tuna", price: "35", img: "🥪" },
       { ar: "ديك رومي", en: "Turkey", price: "23", img: "🥪" },
@@ -67,7 +61,6 @@ export const menuData = [
   {
     id: "sweets",
     title: "SWEETS & CAKES",
-    cols: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
     items: [
       { ar: "شريحة الكراميل", en: "Caramel Slice", price: "8", img: "🍰" },
       { ar: "تارت تشيز كيك", en: "Cheese Cake Tart", price: "18", img: "🥧" },
@@ -80,7 +73,7 @@ export const menuData = [
       { ar: "كيك البرتقال", en: "Orange Loaf", price: "25", img: "🍰" },
       { ar: "كيك العسل", en: "Honey Cake", price: "18", img: "🥞" },
       { ar: "تشيز كيك كولوميه", en: "Coulommier Cheese Cake", price: "35", img: "🍰" },
-      { ar: "كوكيز", en: "Cookies", priceHot: "12", priceCold: "11", img: "🍪" },
+      { ar: "كوكيز", en: "Cookies", priceHot: "12", priceCold: "11", img: "🍪", subText: "فول سوداني | Peanut\nشوكلاته | Chocolate" },
       { ar: "طبقات حلوة", en: "Sweet Layer", price: "30", img: "🍰" },
       { ar: "جوز الهند والتوت", en: "Coconut Berry", price: "25", img: "🍰" },
       { ar: "ليزي كيك مقرمش", en: "Crispy Lazy Cake", price: "30", img: "🍫" },
@@ -93,7 +86,6 @@ export const menuData = [
   {
     id: "water",
     title: "WATER",
-    cols: "grid-cols-1 md:grid-cols-2",
     items: [
       { ar: "مياه فوارة", en: "Sparkling Water", price: "10", img: "💧" },
       { ar: "مياه معدنية", en: "voda Water", price: "8", img: "🚰" },
