@@ -2,27 +2,39 @@ import React from 'react';
 
 const MenuItem = ({ ar, en, price, priceHot, priceCold, img }) => {
   return (
-    <div className="bg-transparent rounded-xl px-2 py-1 w-full max-w-[240px] mx-auto flex items-center justify-between gap-2">
+    // نستخدم dir="rtl" لضمان أن الترتيب يبدأ من اليمين
+    <div dir="rtl" className="flex items-center w-[260px] gap-3">
+      
+      {/* 1. الصورة في جهة اليمين */}
+      <div className="w-14 h-14 shrink-0 flex items-center justify-center">
+        {img ? (
+          <img src={img} alt={ar} className="w-full h-full object-contain" />
+        ) : (
+          <span className="text-2xl">🍰</span>
+        )}
+      </div>
 
-      {/* النص */}
-      <div className="flex flex-col flex-1 min-w-0">
+      {/* 2. النصوص والخط (على يسار الصورة ومحاذاته لليمين) */}
+      <div className="flex flex-col flex-1">
 
-        <div className="flex flex-col items-end w-full">
-          <h3 className="font-bold text-[#4a443c] text-[13px] leading-tight">
+        {/* الأسماء محاذية لليمين (بداية السطر من جهة الصورة) */}
+        <div className="flex flex-col items-start leading-tight">
+          <span className="font-bold text-[#4a443c] text-[14px]">
             {ar}
-          </h3>
-
-          <p className="text-[#8c857c] text-[10px] leading-none -mt-[2px]">
+          </span>
+          <span className="text-[#8c857c] text-[11px] font-medium">
             {en}
-          </p>
+          </span>
         </div>
 
-        {/* السعر */}
-        <div className="flex justify-end items-center gap-2 mt-[2px] font-bold text-[#4a443c]" dir="rtl">
-          
+        {/* الخط الفاصل */}
+        <div className="border-b border-[#d6d2cb] my-[4px] w-full"></div>
+
+        {/* السعر محاذى لليمين أيضاً */}
+        <div className="flex items-center gap-1 font-bold text-[#4a443c]">
           {price && (
-            <span className="text-[12px]">
-              {price} <span className="text-[9px] text-[#8c857c] font-normal">ر.س</span>
+            <span className="text-[13px]">
+              {price} <span className="text-[10px] text-[#8c857c] font-normal">ر.س</span>
             </span>
           )}
 
@@ -32,19 +44,9 @@ const MenuItem = ({ ar, en, price, priceHot, priceCold, img }) => {
               {priceCold && <span>❄️ {priceCold}</span>}
             </div>
           )}
-
         </div>
-      </div>
 
-      {/* الصورة */}
-      <div className="w-10 h-10 shrink-0 flex items-center justify-center">
-        {img ? (
-          <img src={img} alt={ar} className="w-full h-full object-contain" />
-        ) : (
-          <span className="text-lg">☕</span>
-        )}
       </div>
-
     </div>
   );
 };
