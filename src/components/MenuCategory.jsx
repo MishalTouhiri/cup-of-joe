@@ -5,33 +5,33 @@ export default function MenuCategory({ title, items }) {
   return (
     <section className="mb-10 w-full">
 
-      {/* العنوان + الخطوط العريضة */}
+   {/* العنوان مع توزيع 10% خط - نص - باقي السطر خط */}
       <div className="flex items-center w-full mb-8">
         
-        {/* الخط الذي يسبق النص (على اليسار) - تمت زيادة السماكة */}
-        <div className="w-12 h-[2.5px] bg-[#bcb8b0]"></div>
+        {/* الخط الأول (على اليمين) يمثل مسافة بسيطة (10% تقريباً) */}
+        <div className="w-[10%] h-[2px] bg-[#8c857c] shrink-0"></div>
 
-        {/* العنوان */}
-        <h2 className="text-[#4a443c] font-bold tracking-[0.2em] text-sm px-4 uppercase whitespace-nowrap">
+       {/* العنوان - قمنا بتكبير الخط text-lg وزيادة المسافة الجانبية px-8 */}
+        <h2 className="text-[#4a443c] font-bold tracking-[0.25em] text-lg px-8 uppercase whitespace-nowrap">
           {title}
         </h2>
 
-        {/* الخط الذي يتبع النص (على اليمين) - تمت زيادة السماكة وهو الأطول */}
-        <div className="flex-1 h-[2.5px] bg-[#bcb8b0]"></div>
+        {/* الخط الثاني (على اليسار) يمتد ليغطي باقي العرض بنسبة 90% تقريباً */}
+        <div className="flex-1 h-[2px] bg-[#8c857c]"></div>
       </div>
 
-    {/* الشبكة (Grid) بتوزيع متساوٍ ومحاذاة لليمين */}
-<div 
-  dir="rtl" 
-  className="grid grid-cols-3 gap-x-12 gap-y-10 w-full justify-between"
->
-  {items.map((item, index) => (
-    /* flex justify-start لضمان أن كل كرت يبدأ من يمين العمود الخاص به */
-    <div key={index} className="flex justify-start w-full">
-      <MenuItem {...item} />
-    </div>
-  ))}
-</div>
+ {/* الشبكة ثابتة 3 أعمدة */}
+      {/* استخدمنا gap-x-2 للشاشات الصغيرة و gap-x-12 للكبيرة لتقليل التداخل */}
+      <div   dir="rtl" 
+        className="grid grid-cols-3 gap-x-2 md:gap-x-12 gap-y-10 w-full"
+      >
+        {items.map((item, index) => (
+          <div key={index} className="flex justify-start w-full min-w-0">
+             {/* MenuItem يحتاج لتعديل بسيط ليتناسب مع المساحة المتاحة */}
+            <MenuItem {...item} />
+          </div>
+        ))}
+      </div>
 
     </section>
   );
