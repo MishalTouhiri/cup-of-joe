@@ -2,31 +2,34 @@ import MenuItem from './MenuItem';
 
 export default function MenuCategory({ title, items }) {
   return (
-    <section className="mb-10 w-full overflow-hidden">
+    // ضبط المسافة الرأسية بين الأقسام (mb-16 إلى mb-24) لتطابق التباعد في الصور
+    <section className="mb-16 md:mb-24 w-full overflow-hidden px-4 md:px-0">
 
-      {/* 1. تصغير العنوان العلوي في الشاشات الصغيرة */}
-      <div className="flex items-center w-full mb-6 md:mb-8">
+      {/* 1. العنوان العلوي: ضبط الهوامش ليكون متناسقاً تماماً مع الخطوط الجانبية */}
+      <div className="flex items-center w-full mb-10 md:mb-14">
         
-        {/* الخط الأول */}
-        <div className="w-[10%] h-[1.5px] md:h-[2px] bg-[#8c857c] shrink-0"></div>
+        {/* الخط الأول (الأيمن): يمثل الهامش الجانبي القصير */}
+        <div className="w-[6%] md:w-[10%] h-[1px] bg-[#8c857c] shrink-0"></div>
 
-        {/* العنوان: نص صغير في الجوال (text-sm) وكبير في الكمبيوتر (text-lg) */}
-        <h2 className="text-[#4a443c] font-bold tracking-[0.15em] md:tracking-[0.25em] text-[12px] sm:text-sm md:text-lg px-3 md:px-8 uppercase whitespace-nowrap">
+        {/* النص: ضبط الحجم والتباعد بين الحروف ليتناسب مع هوية البراند */}
+        <h2 className="text-[#4a443c] font-bold tracking-[0.2em] md:tracking-[0.3em] text-[14px] sm:text-base md:text-xl px-4 md:px-10 uppercase whitespace-nowrap">
           {title}
         </h2>
 
-        {/* الخط الثاني */}
-        <div className="flex-1 h-[1.5px] md:h-[2px] bg-[#8c857c]"></div>
+        {/* الخط الثاني: يمتد لتغطية كامل عرض الصفحة[cite: 1] */}
+        <div className="flex-1 h-[1px] bg-[#8c857c]"></div>
       </div>
 
-      {/* 2. تصغير الأقسام (الشبكة) بنسبة 30% تقريباً في الشاشات الصغيرة */}
+      {/* 2. شبكة المنتجات: ضبط الفراغات الرأسية والأفقية لضمان Scannability عالية[cite: 1] */}
       <div 
         dir="rtl" 
-        className="grid grid-cols-3 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-10 w-full 
-                   origin-top-right scale-[1] sm:scale-90 md:scale-100 transition-transform"
+        // gap-y-16 تمنح مساحة كافية للنصوص تحت الصور دون تداخل مع الصف التالي[cite: 1]
+        // max-w-[1100px] يحافظ على تركيز العناصر في المنتصف كما في الصور[cite: 1]
+        className="grid grid-cols-3 gap-x-6 sm:gap-x-12 md:gap-x-24 gap-y-16 md:gap-y-24 w-full max-w-[1100px] mx-auto"
       >
         {items.map((item, index) => (
-          <div key={index} className="flex justify-center w-full min-w-0 px-2">
+          <div key={index} className="flex justify-center w-full min-w-0">
+            {/* MenuItem: يتم تمرير البيانات مع مراعاة المحاذاة المركزية[cite: 1] */}
             <MenuItem {...item} />
           </div>
         ))}
