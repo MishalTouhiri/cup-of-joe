@@ -1,23 +1,26 @@
-import React from 'react';
 
 const MenuItem = ({ ar, en, price, priceHot, priceCold, img, subText }) => {
+  const normalizedImg = typeof img === 'string' ? img.replace(/\\/g, '/') : img;
+
   return (
-    <div dir="rtl" className="flex items-start w-full min-w-0 gap-1 sm:gap-3 py-2">
-      
+    <div dir="rtl" className="flex items-center w-full min-w-0 gap-2 rounded-[18px] bg-white/80 p-2 sm:p-3">
       {/* 1. الصورة */}
-<div className="w-10 h-10 sm:w-14 sm:h-14 shrink-0 flex items-center justify-center overflow-hidden rounded-full bg-[#f3f1ed]">  {img && (
-    (img.startsWith("/") || img.startsWith("http")) ? (
-      <img 
-        src={img} 
-        alt={en}
-        className="max-w-full max-h-full object-contain"   />
-    ) : (
-      <span className="text-xl sm:text-2xl">{img}</span>
-    )
-  )}
-</div>
+      <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 flex items-center justify-center overflow-hidden rounded-full border border-[#d6d2cb] bg-[#f3f1ed]">
+        {normalizedImg && (
+          (normalizedImg.startsWith('/') || normalizedImg.startsWith('http')) ? (
+            <img
+              src={normalizedImg}
+              alt={en || ar}
+              className="max-w-full max-h-full object-contain"
+            />
+          ) : (
+            <span className="text-base sm:text-xl leading-none">{normalizedImg}</span>
+          )
+        )}
+      </div>
+
       {/* 2. حاوية النصوص */}
-      <div className="flex flex-col flex-1 min-w-0">
+      <div className="flex flex-col flex-1 min-w-0 gap-1">
 
         {/* الأسماء */}
         <div className="flex flex-col items-start leading-tight">
@@ -42,7 +45,7 @@ const MenuItem = ({ ar, en, price, priceHot, priceCold, img, subText }) => {
 
           {(priceHot || priceCold) && (
             <div className="flex gap-1 text-[10px] sm:text-[12px]">
-              {priceHot && <span><img src="data\SVG\Asset 10.svg" alt="" />{priceHot}</span>}
+              {priceHot && <span>☀️{priceHot}</span>}
               {priceCold && <span>❄️{priceCold}</span>}
             </div>
           )}
@@ -54,7 +57,7 @@ const MenuItem = ({ ar, en, price, priceHot, priceCold, img, subText }) => {
             {subText.split('\n').map((line, index) => (
               <div key={index} className="text-[9px] sm:text-[11px] text-[#8c857c] flex items-center gap-1 leading-relaxed">
                 {/* يمكنك إضافة أيقونة نقطة أو سهم صغيرة */}
-               
+              
                 <span className="break-words">{line}</span>
               </div>
             ))}

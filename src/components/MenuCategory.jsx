@@ -26,8 +26,8 @@ export default function MenuCategory({ title, items }) {
                    origin-top-right scale-[1] sm:scale-90 md:scale-100 transition-transform"
       >
         {items.map((item, index) => (
-<div key={index} className="flex justify-start w-full min-w-0 px-2">
-                <MenuItem {...item} />
+          <div key={index} className="flex justify-center w-full min-w-0 px-2">
+            <MenuItem {...item} />
           </div>
         ))}
       </div>
