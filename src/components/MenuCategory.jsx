@@ -1,4 +1,3 @@
-import React from 'react';
 import MenuItem from './MenuItem';
 
 export default function MenuCategory({ title, items }) {
@@ -23,7 +22,7 @@ export default function MenuCategory({ title, items }) {
       {/* 2. تصغير الأقسام (الشبكة) بنسبة 30% تقريباً في الشاشات الصغيرة */}
       <div 
         dir="rtl" 
-        className="grid grid-cols-3 gap-x-8 md:gap-x-16 gap-y-6 md:gap-y-10 w-full 
+        className="grid grid-cols-3 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-10 w-full 
                    origin-top-right scale-[1] sm:scale-90 md:scale-100 transition-transform"
       >
         {items.map((item, index) => (

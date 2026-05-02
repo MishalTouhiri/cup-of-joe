@@ -5,10 +5,17 @@ const MenuItem = ({ ar, en, price, priceHot, priceCold, img, subText }) => {
     <div dir="rtl" className="flex items-start w-full min-w-0 gap-1 sm:gap-3 py-2">
       
       {/* 1. الصورة */}
-      <div className="w-10 h-10 sm:w-16 sm:h-16 shrink-0 flex items-center justify-center">
-        {img}
-      </div>
-
+<div className="w-10 h-10 sm:w-14 sm:h-14 shrink-0 flex items-center justify-center overflow-hidden rounded-full bg-[#f3f1ed]">  {img && (
+    (img.startsWith("/") || img.startsWith("http")) ? (
+      <img 
+        src={img} 
+        alt={en}
+        className="max-w-full max-h-full object-contain"   />
+    ) : (
+      <span className="text-xl sm:text-2xl">{img}</span>
+    )
+  )}
+</div>
       {/* 2. حاوية النصوص */}
       <div className="flex flex-col flex-1 min-w-0">
 
@@ -29,13 +36,13 @@ const MenuItem = ({ ar, en, price, priceHot, priceCold, img, subText }) => {
         <div className="flex items-center gap-1 font-bold text-[#4a443c] flex-wrap mb-1">
           {price && (
             <span className="text-[11px] sm:text-[14px] md:text-[16px] whitespace-nowrap">
-              {price} <span className="text-[8px] sm:text-[10px] text-[#8c857c] font-normal">ر.س</span>
+              {price} <span className="text-[8px] sm:text-[10px] text-[#8c857c] font-normal">ريال</span>
             </span>
           )}
 
           {(priceHot || priceCold) && (
             <div className="flex gap-1 text-[10px] sm:text-[12px]">
-              {priceHot && <span>☀️{priceHot}</span>}
+              {priceHot && <span><img src="data\SVG\Asset 10.svg" alt="" />{priceHot}</span>}
               {priceCold && <span>❄️{priceCold}</span>}
             </div>
           )}

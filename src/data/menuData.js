@@ -1,3 +1,4 @@
+
 export const menuData = [
   {
     id: "classic",
@@ -7,7 +8,7 @@ export const menuData = [
       { ar: "أمريكانو", en: "Americano", price: "9", img: "☕" },
       { ar: "إسبريسو", en: "Espresso", price: "9", img: "☕" },
       { ar: "لاتيه", en: "Latte", price: "25", img: "🥛" },
-      { ar: "فلات وايت", en: "Flat White", priceHot: "23", priceCold: "24", img: "☕" },
+      { ar: "فلات وايت", en: "Flat White", priceHot: "23", priceCold: "24", img: "/SVG/Asset2.svg" },
       { ar: "مكياتو", en: "Machiatto", price: "20", img: "☕" },
       { ar: "كريزي شوت", en: "Crazy Shot", price: "23", img: "☕" },
       { ar: "فلات وايت صغير", en: "Mini Flat White", price: "16", img: "☕" },
