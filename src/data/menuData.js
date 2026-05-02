@@ -20,7 +20,7 @@ export const menuData = [
     title: "TEA & FILTER COFFEES",
     items: [
       { ar: "قهوة مقطرة", en: "Filter beans", img: "⚗️", subText: "السعر يختلف حسب نوع البن\nPrice varies based on origin\nV60\nChemex" },
-      { ar: "شاي", en: "Tea", price: "12", img: "🫖", subText: "شاي أخضر | Green Tea\nشاي أسود | Black Tea\nليمون وزنجبيل | Lemon & Ginger\nشاي فواكه | Fruity Tea" },
+      { ar: "شاي", en: "Tea", price: "12", img: "/SVG/Asset2.svg", subText: "شاي أخضر | Green Tea\nشاي أسود | Black Tea\nليمون وزنجبيل | Lemon & Ginger\nشاي فواكه | Fruity Tea" },
     ]
   },
   {
