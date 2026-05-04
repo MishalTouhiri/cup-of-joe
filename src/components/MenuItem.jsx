@@ -75,7 +75,7 @@ const MenuItem = ({ ar, en, price, priceHot, priceCold, img, subText }) => {
     
     {/* السعر الحار (نار سوداء) */}
     {priceHot && (
-      <div className="flex items-center gap-1.5 bg-[#fcfbfa]">
+      <div className="flex items-center gap-1.5 ">
         {/* الكلاس هنا يحول الإيموجي لأسود */}
         <span className="text-[13px] grayscale brightness-0">🔥</span>
         <span className="font-bold text-[#4a443c] text-[11px]">
@@ -86,7 +86,7 @@ const MenuItem = ({ ar, en, price, priceHot, priceCold, img, subText }) => {
 
     {/* السعر البارد (ثلجة سوداء) */}
     {priceCold && (
-      <div className="flex items-center gap-1.5 bg-[#fcfbfa] ">
+      <div className="flex items-center gap-1.5  ">
         {/* الكلاس هنا يحول الإيموجي لأسود */}
         <span className="text-[13px] grayscale brightness-0">❄️</span>
         <span className="font-bold text-[#4a443c] text-[11px]">

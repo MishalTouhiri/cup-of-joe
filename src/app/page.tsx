@@ -1,4 +1,3 @@
-import React from 'react';
 import MenuCategory from '@/components/MenuCategory';
 import { menuData } from '@/data/menuData';
 
@@ -9,15 +8,21 @@ export default function Home() {
       <div className="max-w-[1200px] mx-auto px-6 pt-16">
 
         {/* الهيدر */}
-        <header className="flex justify-between items-center mb-16">
+        <header className="flex flex-row-reverse flex-nowrap items-center justify-between gap-4 mb-16 overflow-hidden">
+    <img
+            src="/SVG/سلوقن.svg"
+            alt="دايم أقرب slogan"
+            className="h-auto max-w-[160px] min-w-[80px] shrink-0"
+            dir="rtl"
+          />
+         
+          <img
+            src="/SVG/لوقو.svg"
+            alt="Cup of Joe logo"
+            className="h-auto max-w-[180px] min-w-[80px] shrink-0"
+          />
 
-          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-[0.25em]">
-            CUP OF JOE
-          </h1>
-
-          <h2 className="text-3xl sm:text-4xl font-bold" dir="rtl">
-            دايم أقرب
-          </h2>
+       
 
         </header>
 
