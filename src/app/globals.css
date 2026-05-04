@@ -5,9 +5,22 @@
 body {
   background-color: white;
   color: #4a443c;
+  /* جعل خط Cairo هو الخط الافتراضي لكامل الموقع */
+  font-family: var(--font-cairo), sans-serif;
 }
 
 ::selection {
   background-color: #4a443c;
   color: white;
+}
+
+/* إنشاء كلاسات مخصصة لتعمل مثل كلاسات Tailwind */
+@layer utilities {
+  .font-cairo {
+    font-family: var(--font-cairo), sans-serif;
+  }
+  
+  .font-zain {
+    font-family: var(--font-zain), sans-serif;
+  }
 }
