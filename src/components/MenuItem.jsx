@@ -71,9 +71,9 @@ const MenuItem = ({ ar, en, price, priceHot, priceCold, img, subText }) => {
 
           {/* أسعار الحار والبارد */}
           {(priceHot || priceCold) && (
-            <div className="flex gap-3 text-[11px] font-bold text-[#4a443c]">
-              {priceHot && <span className="flex items-center gap-1">☀️ {priceHot}</span>}
-              {priceCold && <span className="flex items-center gap-1">❄️ {priceCold}</span>}
+            <div className="flex items-center gap-3 text-[11px] font-bold text-[#4a443c]">
+              {priceHot && <span className="flex items-center gap-1"><img src="/SVG/Asset 29.svg" alt="Hot" className="w-4 h-4" />{priceHot}</span>}
+              {priceCold && <span className="flex items-center gap-1"><img src="/SVG/Asset 28.svg" alt="Cold" className="w-4 h-4" /> {priceCold}</span>}
             </div>
           )}
 
