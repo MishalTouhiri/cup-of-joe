@@ -21,13 +21,12 @@ const MenuItem = ({ ar, en, price, priceHot, priceCold, img, subText }) => {
   }, [imageUrl]);
 
   return (
-    /* الصندوق الخفي الرئيسي: يضمن توزيع العناصر بمسافات متساوية */
     <div 
       dir="rtl" 
       className="flex items-start justify-between w-full max-w-[280px] p-2 md:p-3 group"
     >
       
-      {/* 1. جانب الصورة (اليمين) */}
+      {/* 1. جانب الصورة (أصبح على اليمين) */}
       <div className="flex flex-col items-center shrink-0 ml-3">
         <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] flex items-center justify-center">
           {imageUrl && isImagePath && !imgError ? (
@@ -45,23 +44,23 @@ const MenuItem = ({ ar, en, price, priceHot, priceCold, img, subText }) => {
         </div>
       </div>
 
-      {/* 2. جانب النصوص (اليسار) */}
+      {/* 2. جانب النصوص (أصبح على اليسار) */}
       <div className="flex flex-col flex-1 min-w-0">
         
-        {/* العناوين: العربي والإنجليزي */}
+        {/* العناوين: العربي أولاً ثم الإنجليزي */}
         <div className="flex flex-col items-start leading-tight mb-1">
           <span className="font-bold text-[#4a443c] text-[14px] sm:text-[15px]">
             {ar}
           </span>
-          <span className="text-[#8c857c] text-[11px] sm:text-[12px] font-medium italic">
+          <span className="text-[#8c857c] text-[11px] sm:text-[12px] font-medium">
             {en}
           </span>
         </div>
 
-        {/* الخط الفاصل الرفيع كما في الصور */}
+        {/* الخط الفاصل الرفيع */}
         <div className="border-b border-[#d6d2cb] w-full mb-2"></div>
 
-        {/* السعر والبيانات الإضافية */}
+        {/* السعر والبيانات الإضافية (أسفل الخط الفاصل) */}
         <div className="flex flex-col gap-1">
           {price && (
             <span className="font-bold text-[#4a443c] text-[13px]">
@@ -70,35 +69,29 @@ const MenuItem = ({ ar, en, price, priceHot, priceCold, img, subText }) => {
           )}
 
           {/* أسعار الحار والبارد */}
-{(priceHot || priceCold) && (
-  <div className="flex flex-wrap items-center gap-2 mt-1">
-    
-    {/* السعر الحار (نار سوداء) */}
-    {priceHot && (
-      <div className="flex items-center gap-1.5 ">
-        {/* الكلاس هنا يحول الإيموجي لأسود */}
-        <span className="text-[13px] grayscale brightness-0">🔥</span>
-        <span className="font-bold text-[#4a443c] text-[11px]">
-          {priceHot} <span className="text-[9px] font-normal text-[#8c857c]">ريال</span>
-        </span>
-      </div>
-    )}
+          {(priceHot || priceCold) && (
+            <div className="flex flex-wrap items-center gap-2 mt-1">
+              {priceHot && (
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[13px] grayscale brightness-0">🔥</span>
+                  <span className="font-bold text-[#4a443c] text-[11px]">
+                    {priceHot} <span className="text-[9px] font-normal text-[#8c857c]">ريال</span>
+                  </span>
+                </div>
+              )}
 
-    {/* السعر البارد (ثلجة سوداء) */}
-    {priceCold && (
-      <div className="flex items-center gap-1.5  ">
-        {/* الكلاس هنا يحول الإيموجي لأسود */}
-        <span className="text-[13px] grayscale brightness-0">❄️</span>
-        <span className="font-bold text-[#4a443c] text-[11px]">
-          {priceCold} <span className="text-[9px] font-normal text-[#8c857c]">ريال</span>
-        </span>
-      </div>
-    )}
+              {priceCold && (
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[13px] grayscale brightness-0">❄️</span>
+                  <span className="font-bold text-[#4a443c] text-[11px]">
+                    {priceCold} <span className="text-[9px] font-normal text-[#8c857c]">ريال</span>
+                  </span>
+                </div>
+              )}
+            </div>
+          )}
 
-  </div>
-)}
-
-          {/* النصوص الفرعية (مثل أنواع الشاي أو الحشوات) */}
+          {/* النصوص الفرعية */}
           {subText && (
             <div className="mt-1 flex flex-col gap-0.5">
               {subText.split('\n').map((line, index) => (
