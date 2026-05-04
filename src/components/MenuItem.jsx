@@ -70,12 +70,33 @@ const MenuItem = ({ ar, en, price, priceHot, priceCold, img, subText }) => {
           )}
 
           {/* أسعار الحار والبارد */}
-          {(priceHot || priceCold) && (
-            <div className="flex items-center gap-3 text-[11px] font-bold text-[#4a443c]">
-              {priceHot && <span className="flex items-center gap-1"><img src="/SVG/Asset 29.svg" alt="Hot" className="w-4 h-4" />{priceHot}</span>}
-              {priceCold && <span className="flex items-center gap-1"><img src="/SVG/Asset 28.svg" alt="Cold" className="w-4 h-4" /> {priceCold}</span>}
-            </div>
-          )}
+{(priceHot || priceCold) && (
+  <div className="flex flex-wrap items-center gap-2 mt-1">
+    
+    {/* السعر الحار (نار سوداء) */}
+    {priceHot && (
+      <div className="flex items-center gap-1.5 bg-[#fcfbfa]">
+        {/* الكلاس هنا يحول الإيموجي لأسود */}
+        <span className="text-[13px] grayscale brightness-0">🔥</span>
+        <span className="font-bold text-[#4a443c] text-[11px]">
+          {priceHot} <span className="text-[9px] font-normal text-[#8c857c]">ريال</span>
+        </span>
+      </div>
+    )}
+
+    {/* السعر البارد (ثلجة سوداء) */}
+    {priceCold && (
+      <div className="flex items-center gap-1.5 bg-[#fcfbfa] ">
+        {/* الكلاس هنا يحول الإيموجي لأسود */}
+        <span className="text-[13px] grayscale brightness-0">❄️</span>
+        <span className="font-bold text-[#4a443c] text-[11px]">
+          {priceCold} <span className="text-[9px] font-normal text-[#8c857c]">ريال</span>
+        </span>
+      </div>
+    )}
+
+  </div>
+)}
 
           {/* النصوص الفرعية (مثل أنواع الشاي أو الحشوات) */}
           {subText && (
